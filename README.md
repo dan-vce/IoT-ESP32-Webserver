@@ -1,12 +1,16 @@
 # IoT Webserver
 
-IoT Module Assignment code, written in Python,HTML,CSS,JS.  Contains:
+IoT System, written in Python,HTML,CSS,JS. 
+
+ESP32-S3 microcontroller interacts with Flask web server to display temperature readings and enable control of lights.
+
+See System Overview pdf for full details, including circuit diagram.
+
+Contains:
 
 Flask backend, communicates with ESP32 via HTTP/JSON.
 
 Web dashboard frontend, uses AJAX for live updates.
-
-See System Overview pdf for full details.
 
 ## Requirements:
 
