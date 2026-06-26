@@ -12,6 +12,8 @@ Flask backend, communicates with ESP32 via HTTP/JSON.
 
 Web dashboard frontend, uses AJAX for live updates.
 
+ESP32 Firmware
+
 ## Requirements:
 
 flask             #backend web server
