@@ -1,4 +1,4 @@
-# Microslop IoT Webserver
+# IoT Webserver
 
 IoT Module Assignment code, written in Python,HTML,CSS,JS.  Contains:
 
