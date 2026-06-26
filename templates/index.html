@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ESP32 Dashboard</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+  <header>
+    <h1>ESP32 Dashboard - Team Microslop</h1>
+    <div class="badge-group">
+      <span id="server-connection-status" class="badge badge--offline">Server Offline</span>
+      <span id="esp-connection-status" class="badge badge--offline">ESP Offline</span>
+    </div>
+  </header>
+
+  <main>
+    <!-- Sensor readings panel -->
+    <section class="card" id="sensor-panel">
+      <h2>Sensor Data</h2>
+      <div class="sensor-grid">
+        <div class="sensor-item">
+          <span class="sensor-label">Temperature</span>
+          <span class="sensor-value" id="temperature">--</span>
+          <span class="sensor-unit">&deg;C</span>
+        </div>
+      </div>
+      <p class="last-updated">Last updated: <span id="last-updated">never</span></p>
+    </section>
+
+    <!-- LED control panel -->
+    <section class="card" id="led-panel">
+      <h2>LED Control</h2>
+      <div class="pattern-buttons">
+        <button class="btn btn--chase" data-pattern="chase">Chase</button>
+        <button class="btn btn--blink" data-pattern="blink">Blink</button>
+        <button class="btn btn--alternating" data-pattern="alternating">Alternating</button>
+        <button class="btn btn--flicker" data-pattern="flicker">Flicker</button>
+        <button class="btn btn--twinkle" data-pattern="twinkle">Twinkle</button>
+      </div>
+      <p class="active-pattern">Active pattern: <strong id="active-pattern">none</strong></p>
+    </section>
+
+    <!-- Temperature history chart panel -->
+    <section class="card" id="graph-panel">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+        <h2>Temperature History</h2>
+        <select id="timeframe-selector" class="btn">
+          <option value="1">Last 1 Hour</option>
+          <option value="24">Last 24 Hours</option>
+          <option value="168">Last 7 Days</option>
+          <option value="live">Live</option>
+        </select>
+      </div>
+      <div style="position: relative; height:300px; width:100%">
+        <canvas id="tempChart"></canvas>
+      </div>
+    </section>
+  </main>
+  <script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+</body>
+</html>
